@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string.h>
 #include "Funciones.h"
 
 
@@ -7,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    cout << "HOLA ESTOY EN EL MAIN" << endl;
+    srand(time(NULL));
     string vecNombreJugadores[2];
     int vecTiradaDeDados[2] = {};
 
@@ -17,7 +16,7 @@ int main()
         cout << "GRAN CERDO" << endl;
         cout << "---------------------" << endl;
         cout << "1 - JUGAR" << endl;
-        cout << "2 - ESTADÍSTICAS" << endl;
+        cout << "2 - ESTADISTICAS" << endl;
         cout << "3 - CERDITOS" << endl;
         cout << "---------------------" << endl;
         cout << "0 - SALIR" << endl;

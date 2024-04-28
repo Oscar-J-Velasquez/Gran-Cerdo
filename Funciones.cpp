@@ -4,18 +4,14 @@ using namespace std;
 
 int GenerarNumeroAleatorio()
 {
-    srand (time (NULL));
-
     int valorGenerado = (rand ()%6+1);
     return valorGenerado;
-
 }
 
 void DeterminarOrdenDeJugadores(string vecNombreJugadores[], int vecTiradaDeDados[])
 {
     int aux;
     string auxNombre;
-
 
     for(int i=0; i<2; i++)
     {
@@ -26,33 +22,19 @@ void DeterminarOrdenDeJugadores(string vecNombreJugadores[], int vecTiradaDeDado
 
     }
 
-    cout << "//////VALORES ORIGINALES////////" << endl;
-
     for(int i=0;i<2;i++)
     {
         cout << "Nombre jugador #" << i + 1 << ": " << vecNombreJugadores[i] << " saco: " << vecTiradaDeDados[i] << endl;
     }
 
-    cout << "////////////////////////////////" << endl;
-
-
     while(vecTiradaDeDados[0] == vecTiradaDeDados[1])
     {
+        cout << "Hay un empate. Se vuelven a lanzar los dados." << endl;
         for(int i=0; i<2; i++)
         {
             vecTiradaDeDados[i] = GenerarNumeroAleatorio();
         }
     }
-
-    cout << "///////////////////////////////" << endl;
-
-    for(int i=0;i<2;i++)
-    {
-        cout << "Nombre jugador #" << i + 1 << ": " << vecNombreJugadores[i] << " saco: " << vecTiradaDeDados[i] << endl;
-    }
-
-    cout << "////////////////////////////////" << endl;
-
 
     if(vecTiradaDeDados[1]>vecTiradaDeDados[0])
     {
@@ -65,22 +47,14 @@ void DeterminarOrdenDeJugadores(string vecNombreJugadores[], int vecTiradaDeDado
         vecNombreJugadores[1] = auxNombre;
     }
 
-
-
-
-    /*for(int i=0;i<2;i++)
-    {
-        cout << "Nombre jugador #" << i + 1 << ": " << vecNombreJugadores[i] << " saco: " << vecTiradaDeDados[i] << endl;
-    }*/
-
-    cout << endl;
-
-
-
     for(int i=0;i<2;i++)
     {
         cout << "Nombre jugador #" << i + 1 << ": " << vecNombreJugadores[i] << " saco: " << vecTiradaDeDados[i] << endl;
     }
+
+    cout << endl;
+    system("pause");
+    system("cls");
 
 }
 
@@ -153,7 +127,6 @@ void ValidarRespuestaPorCaracter(char &respuesta)
                 opcion = false;
             }
         }
-
 }
 
 
@@ -174,12 +147,12 @@ void EmpezarJuego(string vecNombreJugadores[], int vecTiradaDeDados[])
         {
             cout << "GRAN CERDO" << endl;
             cout << "------------------------------------------------------------------------" << endl;
-            cout << vecNombreJugadores[0] << ": 43 trufas acumuladas" << vecNombreJugadores[1] << ": 22 trufas acumuladas" << endl;
+            cout << vecNombreJugadores[0] << ": 43 trufas acumuladas\t" << vecNombreJugadores[1] << ": 22 trufas acumuladas" << endl;
             cout << "TURNO DE PEPPA" << endl;
             cout << "+-------------------------+" << endl;
-            cout << "| RONDAS #" << i + 1 << endl;
-            cout << "| TRUFAS DE LA RONDA: 13 |" << endl;
-            cout << "| LANZAMIENTOS: 3 |" << endl;
+            cout << "| RONDAS #" << i + 1 << "               |" << endl;
+            cout << "| TRUFAS DE LA RONDA: 13  |" << endl;
+            cout << "| LANZAMIENTOS: 3         |" << endl;
 
 
             numeroAleatorio = GenerarNumeroAleatorio();
